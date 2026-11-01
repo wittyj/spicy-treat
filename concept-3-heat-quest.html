@@ -1,0 +1,309 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🌶%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spicy Treat · Heat Quest (concept 3)</title><meta name="description" content="Spicy Treat, Lagos: pastry with a kick. Naija Stuffed Rolls, Office Lunch Boxes and Spicy Chin-Chin.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<style>
+:root{--chilli:#B3121B;--chilli2:#E0301E;--gold:#F2B63D;--kraft:#C49A6C;--kraft2:#A57B4F;--char:#1E1A18;--cream:#FFF4E2;--wa:#1FAF54}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--cream);color:var(--char);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Baloo 2","Poppins",system-ui,sans-serif;line-height:1.05;margin:.2em 0}
+h2{font-size:clamp(2rem,5vw,3.2rem)}h3{font-size:1.2rem}
+a{color:inherit}
+.wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+.sec{padding:80px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--chilli);margin:0}
+.lede{font-size:1.1rem;max-width:720px;opacity:.85}
+.note{opacity:.85;font-size:.95rem}
+.ph{background:repeating-linear-gradient(45deg,#ffe08a,#ffe08a 6px,#ffd35a 6px,#ffd35a 12px);color:#4a3200;padding:1px 6px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:24px 0}
+.card{position:relative;background:#fff;border-radius:18px;padding:18px 18px 16px;box-shadow:0 6px 0 rgba(30,26,24,.12),0 12px 30px rgba(30,26,24,.08);border:2px solid var(--char);transition:transform .2s}
+.card:hover{transform:translateY(-4px) rotate(-.4deg)}
+.card p{margin:.4em 0 .8em;font-size:.95rem;opacity:.85}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.meta b{font-size:1.25rem;color:var(--chilli)}
+.heat{font-size:.85rem;font-weight:600}
+.badge{position:absolute;top:-12px;right:14px;background:var(--chilli);color:#fff;font-weight:700;font-size:.75rem;padding:4px 10px;border-radius:99px;border:2px solid var(--char)}
+.hero-item{background:linear-gradient(160deg,#fff 40%,#ffe7b0)}
+.pick{display:none;font-size:.72rem;font-weight:700;background:var(--gold);border:2px solid var(--char);border-radius:99px;padding:2px 8px;width:max-content}
+body.heat-1 .roll[data-heat="1"] .pick,body.heat-2 .roll[data-heat="2"] .pick,body.heat-3 .roll[data-heat="3"] .pick{display:inline-block}
+body.heat-1 .roll[data-heat="1"],body.heat-2 .roll[data-heat="2"],body.heat-3 .roll[data-heat="3"]{outline:4px solid var(--gold);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:700;border-radius:99px;padding:12px 20px;border:2px solid var(--char);background:var(--gold);color:var(--char);cursor:pointer;font-size:1rem;box-shadow:0 4px 0 var(--char);transition:transform .12s,box-shadow .12s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--char)}.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--char)}
+.btn.wa{background:var(--wa);color:#fff}.btn.chow{background:#fff}.btn.red{background:var(--chilli);color:#fff}
+.btn.small{padding:8px 14px;font-size:.85rem}
+.cutoff{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--char);color:var(--cream);padding:16px 20px;border-radius:16px;margin:16px 0}
+.clock{background:var(--chilli);padding:6px 12px;border-radius:10px;font-weight:800;font-size:1.2rem}
+.flavours{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.flavours li{background:var(--kraft);color:var(--char);border:2px solid var(--char);border-radius:14px;padding:12px}
+.flavours li span{display:block;font-size:.9rem;opacity:.85}
+.drop{max-width:720px;background:linear-gradient(135deg,#fff,#ffd9c9)}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--kraft);border:2px solid var(--char);border-radius:18px;padding:20px;max-width:720px}
+.quote h3,.quote .full,.quote button,.quote small{grid-column:1/-1}
+.quote label{display:flex;flex-direction:column;font-weight:600;font-size:.9rem;gap:4px}
+.quote input,.quote select,.quote textarea{font:inherit;padding:10px;border-radius:10px;border:2px solid var(--char);background:#fff8ee}
+.heat-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
+.lvl{border:2px solid var(--char);border-radius:18px;padding:18px;color:#fff}.lvl b{font-size:1.6rem}
+.lvl.l1{background:#E59A1E}.lvl.l2{background:var(--chilli2)}.lvl.l3{background:#7d0b12}
+.contact{max-width:720px}
+.foot{background:var(--char);color:var(--cream);text-align:center;padding:30px 20px 100px}
+.float-cta{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:50}
+.float-cta .btn{padding:10px 16px;font-size:.9rem}
+.nowebgl{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:30px;background:radial-gradient(circle at 50% 40%,#E0301E,#7d0b12);color:#fff;z-index:3}
+.nowebgl.show{display:flex}
+.nowebgl h1{font-size:clamp(2.4rem,8vw,5rem);margin:0}
+@media (max-width:600px){.quote{grid-template-columns:1fr}.sec{padding:56px 0}.float-cta .chow{display:none}}
+
+body{background:#1e1a18}
+.sec{background:var(--cream)}.sec:nth-of-type(even){background:#fff8ee}
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#ffb46a,#b3121b 70%,#5a0a10)}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.logo{position:absolute;top:16px;left:18px;z-index:5;font-family:"Baloo 2";font-weight:800;font-size:1.5rem;color:var(--cream)}.logo span{color:var(--gold)}
+.chooser{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:20px 16px 26px;text-align:center;color:var(--cream);background:linear-gradient(transparent,rgba(30,26,24,.85) 40%);transition:opacity .5s,transform .5s}
+.chooser.gone{opacity:0;transform:translateY(40px);pointer-events:none}
+.chooser h1{font-size:clamp(2.2rem,6vw,4rem);color:var(--gold);margin:0;text-shadow:0 4px 0 var(--chilli)}
+.chooser p{margin:4px 0 14px}
+.chars{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.chars button{font:inherit;cursor:pointer;width:min(210px,30vw);border:3px solid var(--char);border-radius:18px;padding:10px;background:var(--cream);color:var(--char);box-shadow:0 6px 0 var(--char);transition:transform .15s}
+.chars button:hover{transform:translateY(-4px)}
+.chars b{display:block;font-family:"Baloo 2";font-size:1.15rem}.chars small{display:block;font-size:.78rem;opacity:.8}
+.chars .c1{background:#ffd78a}.chars .c2{background:#ff8a6a}.chars .c3{background:#c43a3a;color:#fff}
+.quickcta{margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.zonebar{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:5;display:none;gap:6px;flex-wrap:nowrap;overflow-x:auto;max-width:calc(100vw - 20px);padding:6px;background:rgba(30,26,24,.85);border-radius:99px}
+.zonebar.on{display:flex}
+.zonebar button{font:inherit;font-size:.8rem;font-weight:700;border:0;border-radius:99px;padding:8px 12px;background:var(--cream);cursor:pointer;white-space:nowrap}
+.zonebar button.on{background:var(--gold)}
+.status{position:absolute;top:14px;right:16px;z-index:5;display:none;align-items:center;gap:8px;background:rgba(30,26,24,.85);color:var(--cream);padding:6px 8px 6px 14px;border-radius:99px;font-weight:700;font-size:.9rem}
+.status.on{display:flex}.status button{font:inherit;font-size:.75rem;border:0;border-radius:99px;padding:5px 10px;background:var(--gold);cursor:pointer}
+.drawer{position:absolute;top:64px;right:16px;bottom:80px;width:min(440px,calc(100vw - 32px));z-index:6;background:var(--cream);border:3px solid var(--char);border-radius:22px;box-shadow:0 8px 0 var(--char);overflow:auto;padding:18px;transform:translateX(120%);transition:transform .45s cubic-bezier(.2,.9,.3,1.2)}
+.drawer.on{transform:none}
+.drawer .x{position:sticky;top:0;float:right;font:inherit;font-weight:800;border:2px solid var(--char);background:#fff;border-radius:99px;width:34px;height:34px;cursor:pointer;z-index:2}
+.drawer .grid{grid-template-columns:1fr 1fr;gap:10px}
+.drawer .card{padding:12px}.drawer h2{font-size:1.8rem}.drawer .quote{grid-template-columns:1fr}
+.drawer .rec{background:var(--char);color:var(--cream);border-radius:14px;padding:10px 12px;font-size:.9rem;margin:8px 0}
+.hint{position:absolute;left:18px;top:60px;z-index:5;color:var(--cream);font-size:.85rem;opacity:.85;display:none}.hint.on{display:block}
+@media (max-width:700px){.drawer{top:auto;bottom:0;right:0;left:0;width:auto;height:62vh;border-radius:22px 22px 0 0;transform:translateY(110%)}.drawer .grid{grid-template-columns:1fr}.chars button{width:31vw;padding:8px 4px}.chars small{display:none}.hint{display:none!important}.zonebar{bottom:12px}}
+</style><script>
+window.stQuote=function(f){const d=new FormData(f);const t=`Hi Spicy Treat! Quote request:\nName: ${d.get('name')}\nDate: ${d.get('date')||'-'}\nFor: ${d.get('what')}\nGuests: ${d.get('guests')||'-'}\nDetails: ${d.get('notes')||'-'}`;window.open('https://wa.me/234XXXXXXXXXX?text='+encodeURIComponent(t),'_blank');return false;};
+window.stHasWebGL=function(){try{const c=document.createElement('canvas');return !!(window.WebGLRenderingContext&&(c.getContext('webgl2')||c.getContext('webgl')));}catch(e){return false}};
+window.stFail=function(){document.querySelectorAll('.nowebgl').forEach(e=>e.classList.add('show'));};
+if(!stHasWebGL()) document.addEventListener('DOMContentLoaded',stFail);
+setTimeout(()=>{if(!window.__st3d) stFail();},8000);
+</script></head><body class=""><header class="hero" id="home">
+<canvas id="scene" aria-label="Floating 3D Spicy Treat bakery island"></canvas>
+<div class="nowebgl"><div><h1>Pastry with a kick.</h1><p>The 3D island couldn't load here, but the whole menu is below.</p><p><a class="btn" href="concept-3-heat-quest.html#roll-bar">Explore the menu</a></p></div></div>
+<div class="logo" title="Logo placeholder: no logo chosen yet">🌶 Spicy <span>Treat</span></div>
+<div class="hint" id="hint">Tap a stall, use the buttons below, or walk with WASD / arrow keys</div>
+<div class="status" id="status"><span id="who"></span><button id="swap">Change pepper</button></div>
+<div class="chooser" id="chooser"><h1>Pastry with a kick.</h1><p>Choose your spice character. Your heat level decides what we recommend across the island.</p>
+ <div class="chars"><button class="c1" data-h="1"><b>🌶 Small Pepper</b><small>Warm and friendly, for everyone</small></button><button class="c2" data-h="2"><b>🌶🌶 Ata Dey</b><small>Proper Naija heat</small></button><button class="c3" data-h="3"><b>🌶🌶🌶 Fire Dey</b><small>For serious pepper lovers</small></button></div>
+ <div class="quickcta"><a class="btn small" href="concept-3-heat-quest.html#lunch-box">Order a Lunch Box</a><a class="btn small chow" href="concept-3-heat-quest.html#chin-chin">Shop Spicy Chin-Chin</a></div></div>
+<div class="zonebar" id="zonebar"><button data-z="0">🥖 Roll Bar</button><button data-z="1">📦 Lunch Box</button><button data-z="2">🫙 Chin-Chin</button><button data-z="3">🔥 Spicy Drop</button><button data-z="4">🎂 Cakes &amp; Events</button><button data-z="5">🏠 About</button></div>
+<aside class="drawer" id="drawer" aria-live="polite"><button class="x" id="dx" aria-label="Close">✕</button><div id="dc"></div></aside>
+</header>
+<section id="roll-bar" class="sec" data-zone="0"><div class="wrap">
+ <p class="eyebrow">The signature line</p><h2>Naija Stuffed Roll Bar</h2>
+ <p class="lede">One soft dough: lightly buttery, not sweet. Every roll is closed so you can eat it at your desk without cutlery. Turn the heat up or down when you order.</p>
+ <div class="grid"><article class="card roll hero-item" data-heat="2" data-id="suya">
+  <span class="badge">The hero roll</span><span class="pick">Picked for your heat</span>
+  <h3>Suya Chicken Roll</h3><p>Shredded chicken in suya spice with onions and a dusting of yaji</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,800</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Suya%20Chicken%20Roll%20%28NGN%201%2C800%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="beef">
+  <span class="pick">Picked for your heat</span>
+  <h3>Peppered Beef Roll</h3><p>Minced beef in ata rodo pepper sauce</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,800</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Peppered%20Beef%20Roll%20%28NGN%201%2C800%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="gizdodo">
+  <span class="pick">Picked for your heat</span>
+  <h3>Gizdodo Roll</h3><p>Peppered gizzard with fried plantain</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦2,000</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Gizdodo%20Roll%20%28NGN%202%2C000%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="3" data-id="asun">
+  <span class="pick">Picked for your heat</span>
+  <h3>Asun Roll</h3><p>Spicy smoked goat meat</p><div class="meta"><span class="heat">🌶🌶🌶 Fire Dey</span><b>₦2,500</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Asun%20Roll%20%28NGN%202%2C500%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="fish">
+  <span class="pick">Picked for your heat</span>
+  <h3>Spicy Fish Roll</h3><p>Mackerel (titus) in pepper sauce</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,700</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Spicy%20Fish%20Roll%20%28NGN%201%2C700%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="1" data-id="egg">
+  <span class="pick">Picked for your heat</span>
+  <h3>Egg &amp; Sausage Breakfast Roll</h3><p>Scrambled egg, sausage, pepper and onion</p><div class="meta"><span class="heat">🌶 Small Pepper</span><b>₦1,500</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Egg%20%26%20Sausage%20Breakfast%20Roll%20%28NGN%201%2C500%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="1" data-id="veggie">
+  <span class="pick">Picked for your heat</span>
+  <h3>Veggie Roll</h3><p>Spiced plantain, sweetcorn and peppers</p><div class="meta"><span class="heat">🌶 Small Pepper</span><b>₦1,200</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Veggie%20Roll%20%28NGN%201%2C200%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="0" data-id="party">
+  <span class="pick">Picked for your heat</span>
+  <h3>Mini Roll Party Pack (12)</h3><p>A mix of the fillings above</p><div class="meta"><span class="heat">Mixed</span><b>₦9,000</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Mini%20Roll%20Party%20Pack%20%2812%29%20%28NGN%209%2C000%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article></div>
+ <p class="note">Add-on: a small pot of pepper dip, <b>₦300</b>.</p>
+</div></section>
+
+<section id="lunch-box" class="sec" data-zone="1"><div class="wrap">
+ <p class="eyebrow">Pre-order for the office</p><h2>Office Lunch Box</h2>
+ <div class="cutoff"><span class="clock">⏰ 10:00am</span> Orders and transfer payments close at 10:00am. Baking starts at 10:00, everything is packed by 12:00, deliveries run 12:30–1:30pm to one area per day.</div>
+ <div class="grid"><article class="card"><h3>Quick Box</h3><p>1 stuffed roll + 1 drink</p><div class="meta"><b>₦2,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Quick%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Classic Box</h3><p>2 stuffed rolls + 1 drink</p><div class="meta"><b>₦4,500</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Classic%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Spicy Treat Box</h3><p>1 stuffed roll + 1 spicy chin-chin snack pack + 1 drink</p><div class="meta"><b>₦3,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Spicy%20Treat%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Team Box (5 people)</h3><p>5 Classic Boxes with mixed rolls</p><div class="meta"><b>₦21,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Team%20Box%20%285%20people%29%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article></div>
+ <p class="note">Drinks: homemade zobo, Chapman, kunu or chilled water.</p>
+ <p class="note"><b>Delivery areas:</b> <span class="ph">[Placeholder: add today's delivery area, e.g. one area per weekday]</span></p>
+ <p class="note"><b>Office champions:</b> collect your office's orders and get a free box for every 10 boxes ordered. Friday Team Boxes for office treats and meetings.</p>
+</div></section>
+
+<section id="chin-chin" class="sec" data-zone="2"><div class="wrap">
+ <p class="eyebrow">Not too sweet. Just right spicy.</p><h2>Spicy Chin-Chin Shop</h2>
+ <p class="lede">Soft-crunchy, never rock hard. Seasoned in the dough and dusted again after frying, so you taste it in every bite.</p>
+ <ul class="flavours"><li><b>Classic Pepper</b> <span>Ata pepper with a pinch of salt.</span></li><li><b>Suya Spice</b> <span>Yaji seasoning.</span></li><li><b>Pepper &amp; Onion</b> <span>Savoury pepper and onion.</span></li><li><b>Sweet Heat</b> <span>Lightly sweet with chilli, for people who love regular chin-chin.</span></li></ul>
+ <div class="grid"><article class="card"><h3>Snack pack (50g)</h3><p>Lunch box add-on, impulse buys</p><div class="meta"><b>₦500</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Snack%20pack%20%2850g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Resealable pouch (200g)</h3><p>Everyday snacking</p><div class="meta"><b>₦1,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Resealable%20pouch%20%28200g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Jar or bottle (500g)</h3><p>Home and gifting</p><div class="meta"><b>₦3,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Jar%20or%20bottle%20%28500g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Bucket (1kg / 2kg)</h3><p>Parties and offices</p><div class="meta"><b>₦7,000 / ₦13,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Bucket%20%281kg%20/%202kg%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Gift set (3 small jars, 3 flavours)</h3><p>Festive and corporate gifts</p><div class="meta"><b>₦6,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Gift%20set%20%283%20small%20jars%2C%203%20flavours%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article></div>
+</div></section>
+
+<section id="spicy-drop" class="sec" data-zone="3"><div class="wrap">
+ <p class="eyebrow">Limited edition · pre-order only</p><h2>This Week's Spicy Drop</h2>
+ <div class="drop card"><span class="badge">Sample drop</span><h3>Peppered Snail Roll</h3>
+ <p>One new limited item every week, announced Monday on Instagram, TikTok and WhatsApp status. Only around 50 made. When they're gone, they're gone.</p>
+ <div class="meta"><span>Capped at ~50</span><b class="ph">Price announced Monday</b></div>
+ <a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20Please%20reserve%20me%20this%20week%27s%20Spicy%20Drop." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Reserve this week's drop</a>
+ <p class="note">Coming up: Ofada Sauce Roll · Pepper Soup Chicken Roll · Jollof &amp; Chicken Roll · Spicy Chicken Puff-Puff · Shawarma-Spiced Roll · Chilli Chocolate Doughnut</p></div>
+</div></section>
+
+<section id="cakes-events" class="sec" data-zone="4"><div class="wrap">
+ <p class="eyebrow">For your owambe, office party or birthday</p><h2>Cakes &amp; Events</h2>
+ <div class="grid">
+  <article class="card"><h3>Celebration cakes</h3><p>Birthdays, weddings and events. Order with 3–5 days' notice.</p></article>
+  <article class="card"><h3>Doughnuts</h3><p>With a few twists, like a chilli-chocolate glaze.</p></article>
+  <article class="card"><h3>Puff-puff, Spicy Treat style</h3><p>Savoury filled (spicy chicken, peppered beef), dusted (pepper-salt, suya spice) or sweet filled (custard, coconut).</p></article>
+  <article class="card"><h3>Small chops trays</h3><p>Samosa, spring rolls, puff-puff, mini stuffed rolls and peppered gizzard, plus a few packs of spicy chin-chin.</p></article>
+ </div>
+ <form class="quote" onsubmit="return stQuote(this)">
+  <h3>Request a quote</h3>
+  <label>Name<input name="name" required></label>
+  <label>Event date<input name="date" type="date"></label>
+  <label>What do you need?<select name="what"><option>Celebration cake</option><option>Doughnuts</option><option>Puff-puff</option><option>Small chops tray</option><option>A mix</option></select></label>
+  <label>Number of guests<input name="guests" type="number" min="1"></label>
+  <label class="full">Details<textarea name="notes" rows="3" placeholder="Flavour, theme, heat level…"></textarea></label>
+  <button class="btn wa" type="submit">Send request on WhatsApp</button>
+  <small>Opens WhatsApp with your request filled in (number is a placeholder for now).</small>
+ </form>
+</div></section>
+
+<section id="about" class="sec" data-zone="5"><div class="wrap">
+ <p class="eyebrow">About Spicy Treat</p><h2>The bakery for people who'd rather have savoury and spicy</h2>
+ <p class="lede">Freshly baked, filling, a real kick of pepper, and priced for an everyday lunch. Every signature item has a peppery kick, and you choose how hot you want it.</p>
+ <div class="heat-scale">
+  <div class="lvl l1"><b>🌶</b><h3>Small Pepper</h3><p>Warm and friendly, for everyone</p></div>
+  <div class="lvl l2"><b>🌶🌶</b><h3>Ata Dey</h3><p>Proper Naija heat</p></div>
+  <div class="lvl l3"><b>🌶🌶🌶</b><h3>Fire Dey</h3><p>For serious pepper lovers</p></div>
+ </div>
+ <div class="contact card"><h3>Contact &amp; ordering</h3>
+  <p>Pre-order on WhatsApp or here on the website. Same-day delivery on Chowdeck.</p>
+  <p><a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">WhatsApp us</a> <a class="btn chow" href="concept-3-heat-quest.html#chowdeck-link-placeholder" title="Placeholder: replace with the real Chowdeck store link">Chowdeck (placeholder link)</a></p>
+  <p class="note ph">Placeholders: WhatsApp number wa.me/234XXXXXXXXXX and the Chowdeck store link must be replaced before launch.</p>
+ </div>
+</div></section>
+<footer class="foot"><b>Spicy Treat</b> · Pastry with a kick · Lagos <span class="ph">· concept prototype · Logo: placeholder (no logo chosen yet)</span></footer>
+<div class="float-cta"><a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">💬 Order on WhatsApp</a><a class="btn chow" href="concept-3-heat-quest.html#chowdeck-link-placeholder" title="Placeholder Chowdeck link">Chowdeck</a></div>
+<script type="module">
+import * as THREE from 'three';
+const canvas=document.getElementById('scene');let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});}catch(e){stFail();throw e;}
+window.__st3d=true;renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.toneMapping=THREE.ACESFilmicToneMapping;
+const scene=new THREE.Scene();scene.fog=new THREE.Fog('#c8402a',40,90);
+const cam=new THREE.PerspectiveCamera(45,1,.1,200);
+const M=(c,o={})=>new THREE.MeshStandardMaterial({color:c,roughness:.75,...o});
+scene.add(new THREE.HemisphereLight('#fff0d0','#7a2a1a',1.1));
+const sun=new THREE.DirectionalLight('#fff1d6',2.4);sun.position.set(10,20,8);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-16,right:16,top:16,bottom:-16});scene.add(sun);
+// island
+const island=new THREE.Group();scene.add(island);
+const top=new THREE.Mesh(new THREE.CylinderGeometry(14,13.4,1.2,48),M('#e9c46a'));top.position.y=-.6;top.receiveShadow=true;island.add(top);
+const grassRing=new THREE.Mesh(new THREE.TorusGeometry(13.6,.5,8,48),M('#c49a6c'));grassRing.rotation.x=Math.PI/2;grassRing.position.y=-.1;island.add(grassRing);
+const rock=new THREE.Mesh(new THREE.ConeGeometry(13.4,12,10,3),M('#8a5a3a',{flatShading:true}));rock.rotation.x=Math.PI;rock.position.y=-7.2;island.add(rock);
+const path=new THREE.Mesh(new THREE.RingGeometry(8.2,9.8,48),M('#c49a6c'));path.rotation.x=-Math.PI/2;path.position.y=.01;path.receiveShadow=true;island.add(path);
+const plaza=new THREE.Mesh(new THREE.CircleGeometry(3,32),M('#b3121b'));plaza.rotation.x=-Math.PI/2;plaza.position.y=.02;island.add(plaza);
+// small floating islets & clouds
+const islets=[];for(let i=0;i<6;i++){const g=new THREE.Group();const t=new THREE.Mesh(new THREE.CylinderGeometry(1.6,1.4,.5,12),M('#e9c46a'));g.add(t);const r=new THREE.Mesh(new THREE.ConeGeometry(1.4,3,7),M('#8a5a3a',{flatShading:true}));r.rotation.x=Math.PI;r.position.y=-1.7;g.add(r);const a=i/6*Math.PI*2+.4,R=22+Math.random()*6;g.position.set(Math.cos(a)*R,-2+Math.random()*6,Math.sin(a)*R);g.userData.ph=Math.random()*6;scene.add(g);islets.push(g);}
+const cloudM=M('#fff4e2',{roughness:1});const clouds=[];for(let i=0;i<8;i++){const g=new THREE.Group();for(let k=0;k<4;k++){const s=new THREE.Mesh(new THREE.SphereGeometry(1+Math.random(),10,8),cloudM);s.position.set(k*1.3,Math.random()*.5,Math.random());g.add(s);}const a=Math.random()*Math.PI*2,R=20+Math.random()*15;g.position.set(Math.cos(a)*R,-6+Math.random()*4,Math.sin(a)*R);g.userData.a=a;g.userData.R=R;scene.add(g);clouds.push(g);}
+function textTex(t,fg,bg,w=640,h=140,fs=60){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.fillStyle=bg;g.beginPath();g.roundRect(4,4,w-8,h-8,40);g.fill();g.fillStyle=fg;g.font=`800 ${fs}px "Baloo 2",Poppins,sans-serif`;g.textAlign='center';g.textBaseline='middle';g.fillText(t,w/2,h/2+4);const x=new THREE.CanvasTexture(c);x.colorSpace=THREE.SRGBColorSpace;return x;}
+// zones
+const ZN=['Stuffed Roll Bar','Office Lunch Box','Chin-Chin Shop',"This Week's Drop",'Cakes & Events','About & Contact'];
+const ROOF=['#b3121b','#1e1a18','#a5631f','#7d0b12','#e0301e','#f2b63d'];
+const zones=[],rings=[];
+ZN.forEach((n,i)=>{const a=i/6*Math.PI*2-Math.PI/2-Math.PI/6;const R=10.8;const g=new THREE.Group();g.position.set(Math.cos(a)*R,0,Math.sin(a)*R);g.rotation.y=-a-Math.PI/2;
+ const base=new THREE.Mesh(new THREE.BoxGeometry(3.6,2.4,2.6),M('#fff4e2'));base.position.y=1.2;g.add(base);
+ const roof=new THREE.Mesh(new THREE.ConeGeometry(2.9,1.6,4),M(ROOF[i]));roof.rotation.y=Math.PI/4;roof.position.y=3.2;g.add(roof);
+ const counter=new THREE.Mesh(new THREE.BoxGeometry(3.8,.3,.8),M('#c49a6c'));counter.position.set(0,1.1,1.5);g.add(counter);
+ const icon=new THREE.Group();icon.position.y=5;g.add(icon);
+ if(i===0){const r=new THREE.Mesh(new THREE.CapsuleGeometry(.45,1.2,8,16),M('#e9a94a'));r.rotation.z=Math.PI/2;icon.add(r);}
+ if(i===1){const b=new THREE.Mesh(new THREE.BoxGeometry(1.4,.8,1),M('#c49a6c'));icon.add(b);const s=new THREE.Mesh(new THREE.CylinderGeometry(.22,.22,.02,20),M('#b3121b'));s.rotation.x=Math.PI/2;s.position.set(.35,0,.51);icon.add(s);}
+ if(i===2){const j=new THREE.Mesh(new THREE.CylinderGeometry(.55,.55,1.2,20),M('#ffe9c4',{transparent:true,opacity:.7}));icon.add(j);const l=new THREE.Mesh(new THREE.CylinderGeometry(.58,.58,.2,20),M('#b3121b'));l.position.y=.7;icon.add(l);}
+ if(i===3){const f=new THREE.Mesh(new THREE.OctahedronGeometry(.8),M('#ff3b1a',{emissive:'#ff3b1a',emissiveIntensity:.8}));icon.add(f);}
+ if(i===4){[[.8,.4,'#fff4e2'],[.6,.4,'#f2b63d'],[.4,.35,'#b3121b']].reduce((y,[r,h,c])=>{const t=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,20),M(c));t.position.y=y;icon.add(t);return y+h;},-.4);}
+ if(i===5){const h=new THREE.Mesh(new THREE.ConeGeometry(.35,1.4,12),M('#e0301e',{roughness:.3}));h.rotation.z=Math.PI;icon.add(h);const st=new THREE.Mesh(new THREE.CylinderGeometry(.06,.08,.4,8),M('#2f7a2a'));st.position.y=.85;icon.add(st);}
+ const sg=new THREE.Sprite(new THREE.SpriteMaterial({map:textTex(n,'#fff4e2',ROOF[i]==='#f2b63d'?'#a5631f':ROOF[i])}));sg.scale.set(5,1.1,1);sg.position.y=6.6;g.add(sg);
+ g.traverse(o=>{if(o.isMesh){o.castShadow=true;o.userData.zone=i;}});
+ island.add(g);zones.push({g,icon,a,pos:new THREE.Vector3(Math.cos(a)*8.6,0,Math.sin(a)*8.6)});
+ const ring=new THREE.Mesh(new THREE.RingGeometry(.9,1.2,32),new THREE.MeshBasicMaterial({color:'#f2b63d',transparent:true,opacity:.8}));ring.rotation.x=-Math.PI/2;ring.position.set(Math.cos(a)*8.6,.04,Math.sin(a)*8.6);island.add(ring);rings.push(ring);});
+// palms on island
+for(let i=0;i<6;i++){const a=i/6*Math.PI*2;const g=new THREE.Group();const t=new THREE.Mesh(new THREE.CylinderGeometry(.12,.2,3.4,6),M('#8a5a3a'));t.position.y=1.7;g.add(t);for(let k=0;k<5;k++){const p=new THREE.Group();const l=new THREE.Mesh(new THREE.ConeGeometry(.35,2,4),M('#3f8f3a'));l.rotation.z=Math.PI/2.4;l.position.x=.8;p.add(l);p.rotation.y=k*1.25;p.position.y=3.4;g.add(p);}g.position.set(Math.cos(a)*12.8,0,Math.sin(a)*12.8);g.traverse(o=>o.castShadow=true);island.add(g);}
+// characters
+const CH=[null,{c:'#f2b63d',s:.8,n:'Small Pepper'},{c:'#e0301e',s:1,n:'Ata Dey'},{c:'#7d0b12',s:1.18,n:'Fire Dey'}];
+function pepper(h){const d=CH[h];const g=new THREE.Group();const body=new THREE.Mesh(new THREE.SphereGeometry(.8,24,18),M(d.c,{roughness:.25}));body.scale.set(.85,1.3,.85);body.position.y=1.1;g.add(body);
+ const tip=new THREE.Mesh(new THREE.ConeGeometry(.45,.8,18),M(d.c,{roughness:.25}));tip.rotation.x=Math.PI;tip.position.y=.15;g.add(tip);
+ const cap=new THREE.Mesh(new THREE.CylinderGeometry(.35,.2,.2,12),M('#2f7a2a'));cap.position.y=2.1;g.add(cap);const st=new THREE.Mesh(new THREE.CylinderGeometry(.06,.09,.5,8),M('#2f7a2a'));st.position.set(.1,2.4,0);st.rotation.z=-.4;g.add(st);
+ [-.25,.25].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.17,12,10),M('#fff'));e.position.set(x,1.45,.62);g.add(e);const p=new THREE.Mesh(new THREE.SphereGeometry(.08,8,8),M('#111'));p.position.set(x,1.45,.77);g.add(p);if(h===3){const b=new THREE.Mesh(new THREE.BoxGeometry(.3,.06,.05),M('#111'));b.position.set(x,1.66,.74);b.rotation.z=x>0?.4:-.4;g.add(b);}});
+ const mouth=new THREE.Mesh(new THREE.TorusGeometry(.14,.03,6,12,Math.PI),M('#111'));mouth.position.set(0,1.18,.72);mouth.rotation.z=Math.PI;g.add(mouth);
+ [-1,1].forEach(s=>{const arm=new THREE.Mesh(new THREE.CapsuleGeometry(.08,.4,4,8),M(d.c));arm.position.set(s*.72,1,.1);arm.rotation.z=s*.6;g.add(arm);});
+ g.scale.setScalar(d.s);g.traverse(o=>o.castShadow=true);g.userData.h=h;return g;}
+const lineup=[1,2,3].map(h=>{const p=pepper(h);p.position.set((h-2)*2.4,0,2);scene.add(p);return p;});
+let hero=null;
+// flame / ember particles (heat aura)
+const EN=500;const eg=new THREE.BufferGeometry();const ep=new Float32Array(EN*3);for(let i=0;i<EN;i++){const a=Math.random()*Math.PI*2,r=Math.random()*14;ep[i*3]=Math.cos(a)*r;ep[i*3+1]=Math.random()*10;ep[i*3+2]=Math.sin(a)*r;}eg.setAttribute('position',new THREE.BufferAttribute(ep,3));
+const etex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');const r=g.createRadialGradient(32,32,1,32,32,30);r.addColorStop(0,'#fff6c0');r.addColorStop(.35,'#ff7a1a');r.addColorStop(1,'rgba(255,40,0,0)');g.fillStyle=r;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);})();
+const emat=new THREE.PointsMaterial({size:.35,map:etex,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});const embers=new THREE.Points(eg,emat);scene.add(embers);
+const heroFlame=new THREE.Points(new THREE.BufferGeometry().setAttribute('position',new THREE.BufferAttribute(new Float32Array(60*3),3)),new THREE.PointsMaterial({size:.4,map:etex,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));scene.add(heroFlame);heroFlame.visible=false;
+// UI
+const S={heat:0,mode:'choose',target:null,zone:-1,keys:{}};
+const chooser=document.getElementById('chooser'),zonebar=document.getElementById('zonebar'),status=document.getElementById('status'),drawer=document.getElementById('drawer'),dc=document.getElementById('dc'),hint=document.getElementById('hint');
+const zb=[...zonebar.querySelectorAll('button')];
+const secIds=['roll-bar','lunch-box','chin-chin','spicy-drop','cakes-events','about'];
+const RECS={1:'Egg & Sausage Breakfast Roll (₦1,500) and Veggie Roll (₦1,200)',2:'Suya Chicken Roll (₦1,800), the hero, plus Peppered Beef, Gizdodo and Spicy Fish',3:'Asun Roll (₦2,500), spicy smoked goat meat. Ask for extra pepper dip (₦300)'};
+function choose(h){S.heat=h;document.body.className='heat-'+h;lineup.forEach(p=>p.visible=false);if(hero)scene.remove(hero);hero=pepper(h);hero.position.set(0,0,0);scene.add(hero);heroFlame.visible=h===3;
+ chooser.classList.add('gone');zonebar.classList.add('on');status.classList.add('on');hint.classList.add('on');document.getElementById('who').textContent='Playing as '+'🌶'.repeat(h)+' '+CH[h].n;S.mode='explore';S.pop=1;}
+document.querySelectorAll('.chars button').forEach(b=>{b.onclick=()=>choose(+b.dataset.h);b.onmouseenter=()=>S.hover=+b.dataset.h;b.onmouseleave=()=>S.hover=0;});
+document.getElementById('swap').onclick=()=>{S.mode='choose';closeDrawer();chooser.classList.remove('gone');zonebar.classList.remove('on');status.classList.remove('on');hint.classList.remove('on');if(hero)scene.remove(hero);hero=null;heroFlame.visible=false;lineup.forEach(p=>p.visible=true);};
+function goZone(i){if(S.mode!=='explore')return;S.target=zones[i].pos.clone();S.pending=i;zb.forEach((b,k)=>b.classList.toggle('on',k===i));closeDrawer();}
+zb.forEach((b,i)=>b.onclick=()=>goZone(i));
+function openZone(i){S.zone=i;const src=document.getElementById(secIds[i]).querySelector('.wrap');dc.innerHTML=src.innerHTML;
+ if(i===0&&S.heat){const r=document.createElement('div');r.className='rec';r.innerHTML=`<b>${'🌶'.repeat(S.heat)} ${CH[S.heat].n} picks:</b> ${RECS[S.heat]}. Highlighted below. You can turn the heat up or down on any roll when you order.`;dc.querySelector('.lede').after(r);}
+ if(i!==0&&S.heat){const r=document.createElement('div');r.className='rec';r.textContent=`Tell us "${CH[S.heat].n}" when you order and we'll pepper it to match.`;const h=dc.querySelector('h2');h&&h.after(r);}
+ drawer.classList.add('on');drawer.scrollTop=0;}
+function closeDrawer(){drawer.classList.remove('on');S.zone=-1;}
+document.getElementById('dx').onclick=closeDrawer;
+addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;S.keys[e.key.toLowerCase()]=true;});addEventListener('keyup',e=>S.keys[e.key.toLowerCase()]=false);
+const ray=new THREE.Raycaster(),mv=new THREE.Vector2();
+canvas.addEventListener('click',e=>{const r=canvas.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,cam);
+ if(S.mode==='choose'){const h=ray.intersectObjects(lineup,true);if(h.length){let o=h[0].object;while(o.parent&&!o.userData.h)o=o.parent;choose(o.userData.h);}return;}
+ const h=ray.intersectObjects(island.children,true).find(x=>x.object.userData.zone!==undefined);if(h)goZone(h.object.userData.zone);});
+function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.fov=w<700?62:45;cam.updateProjectionMatrix();}
+addEventListener('resize',resize);resize();
+let vis=true;new IntersectionObserver(([e])=>vis=e.isIntersecting).observe(canvas);
+const clock=new THREE.Clock(),tmp=new THREE.Vector3(),look=new THREE.Vector3();
+function tick(){requestAnimationFrame(tick);if(!vis)return;const dt=Math.min(clock.getDelta(),.05),T=clock.elapsedTime;
+ const k=[.25,.25,.6,1][S.heat||0];
+ const a=eg.attributes.position.array;const act=Math.floor(EN*[.15,.2,.5,1][S.heat||0]);for(let i=0;i<EN;i++){if(i<act){a[i*3+1]+=dt*(.5+k*1.6);if(a[i*3+1]>12)a[i*3+1]=0;}else a[i*3+1]=-99;}eg.attributes.position.needsUpdate=true;
+ islets.forEach(g=>g.position.y+=Math.sin(T+g.userData.ph)*.004);clouds.forEach(g=>{g.userData.a+=dt*.02;g.position.x=Math.cos(g.userData.a)*g.userData.R;g.position.z=Math.sin(g.userData.a)*g.userData.R;});
+ zones.forEach((z,i)=>{z.icon.rotation.y+=dt;z.icon.position.y=5+Math.sin(T*2+i)*.2;});rings.forEach((r,i)=>{const s=1+Math.sin(T*3+i)*.12;r.scale.set(s,s,s);r.material.opacity=i===S.zone?1:.55;});
+ island.position.y=Math.sin(T*.8)*.15;
+ if(S.mode==='choose'){lineup.forEach((p,i)=>{const h=i+1;const j=S.hover===h?Math.abs(Math.sin(T*8))*.6:Math.abs(Math.sin(T*2+i))*.12;p.position.y=island.position.y+j;p.rotation.y=Math.sin(T+i)*.3;});
+  const mob=innerWidth<700;cam.position.lerp(tmp.set(0,mob?2.8:3.6,mob?15:10.5),.05);look.lerp(tmp.set(0,mob?-1.6:1.6,0),.05);cam.lookAt(look);}
+ else if(hero){let mx=0,mz=0;const K=S.keys;if(K['w']||K['arrowup'])mz-=1;if(K['s']||K['arrowdown'])mz+=1;if(K['a']||K['arrowleft'])mx-=1;if(K['d']||K['arrowright'])mx+=1;
+  let moving=false;if(mx||mz){S.target=null;S.pending=null;const v=tmp.set(mx,0,mz).normalize().multiplyScalar(dt*6);hero.position.add(v);hero.rotation.y=Math.atan2(mx,mz);moving=true;
+   const r=Math.hypot(hero.position.x,hero.position.z);if(r>12.5)hero.position.multiplyScalar(12.5/r);
+   const near=zones.findIndex(z=>z.pos.distanceTo(hero.position)<1.6);if(near>=0&&near!==S.zone){openZone(near);zb.forEach((b,k)=>b.classList.toggle('on',k===near));}}
+  else if(S.target){const d=tmp.copy(S.target).sub(hero.position);d.y=0;const L=d.length();if(L>.15){d.normalize();hero.position.addScaledVector(d,Math.min(L,dt*7));hero.rotation.y=Math.atan2(d.x,d.z);moving=true;}else{S.target=null;if(S.pending!=null){openZone(S.pending);S.pending=null;hero.rotation.y=Math.atan2(-hero.position.x,-hero.position.z)+Math.PI;}}}
+  const by=moving?Math.abs(Math.sin(T*12))*.35:Math.abs(Math.sin(T*2))*.08;hero.position.y=island.position.y+by;
+  if(S.pop){S.pop=Math.max(0,S.pop-dt*1.5);hero.scale.setScalar(CH[S.heat].s*(1+Math.sin((1-S.pop)*Math.PI)*.4));}
+  if(heroFlame.visible){const fa=heroFlame.geometry.attributes.position.array;for(let i=0;i<60;i++){const ph=(T*1.5+i/60)%1;fa[i*3]=hero.position.x+Math.sin(i*7.1)*.4*(1-ph);fa[i*3+1]=hero.position.y+2.8*CH[3].s+ph*1.6;fa[i*3+2]=hero.position.z+Math.cos(i*3.3)*.4*(1-ph);}heroFlame.geometry.attributes.position.needsUpdate=true;}
+  const mob=innerWidth<700;const hp=hero.position;const off=S.zone>=0&&!mob?tmp.set(hp.x*.4+6,11,hp.z*.4+18):tmp.set(hp.x*.5,mob?17:13,hp.z*.5+(mob?24:19));cam.position.lerp(off,.04);look.lerp(new THREE.Vector3(hp.x*.6+(S.zone>=0&&!mob?4:0),1,hp.z*.6+(mob&&S.zone>=0?4:0)),.06);cam.lookAt(look);}
+ renderer.render(scene,cam);}
+window.__testHook=()=>{choose(2);setTimeout(()=>goZone(0),600);};
+tick();
+</script><a data-deed-badge href="https://deed.page/clean?ref=badge" target="_blank" rel="noopener" aria-label="Published with deed.page" style="all:initial;position:fixed;right:10px;bottom:10px;z-index:2147483647;box-sizing:border-box;display:inline-block;padding:4px 8px;border-radius:6px;background:rgba(22,20,15,.78);color:#f6f3ec;font:500 11px/1.3 ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.01em;text-decoration:none;cursor:pointer;opacity:.9">Published with deed.page</a></body></html>

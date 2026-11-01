@@ -1,0 +1,324 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🌶%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spicy Treat · Pepper Kitchen (concept 1)</title><meta name="description" content="Spicy Treat, Lagos: pastry with a kick. Naija Stuffed Rolls, Office Lunch Boxes and Spicy Chin-Chin.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<style>
+:root{--chilli:#B3121B;--chilli2:#E0301E;--gold:#F2B63D;--kraft:#C49A6C;--kraft2:#A57B4F;--char:#1E1A18;--cream:#FFF4E2;--wa:#1FAF54}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--cream);color:var(--char);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Baloo 2","Poppins",system-ui,sans-serif;line-height:1.05;margin:.2em 0}
+h2{font-size:clamp(2rem,5vw,3.2rem)}h3{font-size:1.2rem}
+a{color:inherit}
+.wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+.sec{padding:80px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--chilli);margin:0}
+.lede{font-size:1.1rem;max-width:720px;opacity:.85}
+.note{opacity:.85;font-size:.95rem}
+.ph{background:repeating-linear-gradient(45deg,#ffe08a,#ffe08a 6px,#ffd35a 6px,#ffd35a 12px);color:#4a3200;padding:1px 6px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:24px 0}
+.card{position:relative;background:#fff;border-radius:18px;padding:18px 18px 16px;box-shadow:0 6px 0 rgba(30,26,24,.12),0 12px 30px rgba(30,26,24,.08);border:2px solid var(--char);transition:transform .2s}
+.card:hover{transform:translateY(-4px) rotate(-.4deg)}
+.card p{margin:.4em 0 .8em;font-size:.95rem;opacity:.85}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.meta b{font-size:1.25rem;color:var(--chilli)}
+.heat{font-size:.85rem;font-weight:600}
+.badge{position:absolute;top:-12px;right:14px;background:var(--chilli);color:#fff;font-weight:700;font-size:.75rem;padding:4px 10px;border-radius:99px;border:2px solid var(--char)}
+.hero-item{background:linear-gradient(160deg,#fff 40%,#ffe7b0)}
+.pick{display:none;font-size:.72rem;font-weight:700;background:var(--gold);border:2px solid var(--char);border-radius:99px;padding:2px 8px;width:max-content}
+body.heat-1 .roll[data-heat="1"] .pick,body.heat-2 .roll[data-heat="2"] .pick,body.heat-3 .roll[data-heat="3"] .pick{display:inline-block}
+body.heat-1 .roll[data-heat="1"],body.heat-2 .roll[data-heat="2"],body.heat-3 .roll[data-heat="3"]{outline:4px solid var(--gold);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:700;border-radius:99px;padding:12px 20px;border:2px solid var(--char);background:var(--gold);color:var(--char);cursor:pointer;font-size:1rem;box-shadow:0 4px 0 var(--char);transition:transform .12s,box-shadow .12s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--char)}.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--char)}
+.btn.wa{background:var(--wa);color:#fff}.btn.chow{background:#fff}.btn.red{background:var(--chilli);color:#fff}
+.btn.small{padding:8px 14px;font-size:.85rem}
+.cutoff{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--char);color:var(--cream);padding:16px 20px;border-radius:16px;margin:16px 0}
+.clock{background:var(--chilli);padding:6px 12px;border-radius:10px;font-weight:800;font-size:1.2rem}
+.flavours{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.flavours li{background:var(--kraft);color:var(--char);border:2px solid var(--char);border-radius:14px;padding:12px}
+.flavours li span{display:block;font-size:.9rem;opacity:.85}
+.drop{max-width:720px;background:linear-gradient(135deg,#fff,#ffd9c9)}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--kraft);border:2px solid var(--char);border-radius:18px;padding:20px;max-width:720px}
+.quote h3,.quote .full,.quote button,.quote small{grid-column:1/-1}
+.quote label{display:flex;flex-direction:column;font-weight:600;font-size:.9rem;gap:4px}
+.quote input,.quote select,.quote textarea{font:inherit;padding:10px;border-radius:10px;border:2px solid var(--char);background:#fff8ee}
+.heat-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
+.lvl{border:2px solid var(--char);border-radius:18px;padding:18px;color:#fff}.lvl b{font-size:1.6rem}
+.lvl.l1{background:#E59A1E}.lvl.l2{background:var(--chilli2)}.lvl.l3{background:#7d0b12}
+.contact{max-width:720px}
+.foot{background:var(--char);color:var(--cream);text-align:center;padding:30px 20px 100px}
+.float-cta{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:50}
+.float-cta .btn{padding:10px 16px;font-size:.9rem}
+.nowebgl{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:30px;background:radial-gradient(circle at 50% 40%,#E0301E,#7d0b12);color:#fff;z-index:3}
+.nowebgl.show{display:flex}
+.nowebgl h1{font-size:clamp(2.4rem,8vw,5rem);margin:0}
+@media (max-width:600px){.quote{grid-template-columns:1fr}.sec{padding:56px 0}.float-cta .chow{display:none}}
+
+body{background:var(--cream)}
+.hero{position:relative;height:100vh;min-height:620px;background:#2a1612;overflow:hidden}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.brand{position:absolute;top:18px;left:20px;z-index:4;color:var(--cream)}
+.brand .logo{font-family:"Baloo 2";font-weight:800;font-size:1.6rem}.brand .logo span{color:var(--gold)}
+.brand h1{font-size:clamp(2.2rem,6vw,4.4rem);color:var(--gold);text-shadow:0 4px 0 var(--chilli);margin:6px 0 0}
+.brand p{margin:4px 0 0;opacity:.85;max-width:360px}
+.hud{position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:4;width:min(360px,92vw);background:rgba(255,244,226,.96);border:3px solid var(--char);border-radius:22px;padding:16px;box-shadow:0 8px 0 var(--char)}
+.hud h2{font-size:1.3rem;margin:0 0 4px}.hud .step{font-size:.75rem;font-weight:800;color:var(--chilli);letter-spacing:.1em;text-transform:uppercase}
+.rolls{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
+.rolls button,.heats button{font:inherit;font-size:.78rem;font-weight:600;border:2px solid var(--char);background:#fff;border-radius:99px;padding:6px 10px;cursor:pointer}
+.rolls button.on{background:var(--gold)}
+.heats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0 12px}
+.heats button{border-radius:12px;padding:8px 4px;line-height:1.2}
+.heats button.on{background:var(--chilli);color:#fff}
+.sum{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin:6px 0 10px}.sum b{color:var(--chilli);font-size:1.4rem}
+.hud label{font-size:.85rem;display:flex;gap:6px;align-items:center;margin-bottom:10px}
+.hud .row{display:flex;gap:8px;flex-wrap:wrap}
+.hud .btn{flex:1}
+#order[hidden]{display:none}
+.banner-cta{position:absolute;left:20px;bottom:24px;z-index:4;display:flex;gap:10px;flex-wrap:wrap}
+.toast{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:5;background:var(--gold);border:2px solid var(--char);padding:8px 16px;border-radius:99px;font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.sec:nth-of-type(odd){background:#fff8ee}
+@media (max-width:820px){.hero{height:auto;min-height:0;padding-bottom:20px}#scene{position:relative;height:56vh}.brand{top:12px}.brand p{display:none}.hud{position:relative;right:auto;top:auto;transform:none;margin:-30px auto 0;width:calc(100% - 24px)}.banner-cta{position:relative;left:auto;bottom:auto;justify-content:center;margin:16px 12px 60px}}
+</style><script>
+window.stQuote=function(f){const d=new FormData(f);const t=`Hi Spicy Treat! Quote request:\nName: ${d.get('name')}\nDate: ${d.get('date')||'-'}\nFor: ${d.get('what')}\nGuests: ${d.get('guests')||'-'}\nDetails: ${d.get('notes')||'-'}`;window.open('https://wa.me/234XXXXXXXXXX?text='+encodeURIComponent(t),'_blank');return false;};
+window.stHasWebGL=function(){try{const c=document.createElement('canvas');return !!(window.WebGLRenderingContext&&(c.getContext('webgl2')||c.getContext('webgl')));}catch(e){return false}};
+window.stFail=function(){document.querySelectorAll('.nowebgl').forEach(e=>e.classList.add('show'));};
+if(!stHasWebGL()) document.addEventListener('DOMContentLoaded',stFail);
+setTimeout(()=>{if(!window.__st3d) stFail();},8000);
+</script></head><body class="heat-2"><header class="hero" id="home">
+<canvas id="scene" aria-label="3D bakery kitchen where you bake your own Spicy Treat roll"></canvas>
+<div class="nowebgl"><div><h1>Pastry with a kick.</h1><p>Your browser couldn't start the 3D kitchen, but the full menu is right below.</p><p><a class="btn" href="concept-1-pepper-kitchen.html#roll-bar">See the Roll Bar</a></p></div></div>
+<div class="brand"><div class="logo" title="Logo placeholder: no logo chosen yet">🌶 Spicy <span>Treat</span></div><h1>Pastry with a kick.</h1><p>You're the baker today. Pick a roll, set the heat, box it up and send the order.</p></div>
+<div class="toast" id="toast"></div>
+<aside class="hud" aria-label="Bake your roll">
+ <div class="step">Step 1 · Pick your roll</div>
+ <div class="rolls" id="rolls"><button data-i="0" data-name="Suya Chicken Roll" data-price="₦1,800" data-heat="2">Suya Chicken</button><button data-i="1" data-name="Peppered Beef Roll" data-price="₦1,800" data-heat="2">Peppered Beef</button><button data-i="2" data-name="Gizdodo Roll" data-price="₦2,000" data-heat="2">Gizdodo</button><button data-i="3" data-name="Asun Roll" data-price="₦2,500" data-heat="3">Asun</button><button data-i="4" data-name="Spicy Fish Roll" data-price="₦1,700" data-heat="2">Spicy Fish</button><button data-i="5" data-name="Egg &amp; Sausage Breakfast Roll" data-price="₦1,500" data-heat="1">Egg &amp; Sausage</button><button data-i="6" data-name="Veggie Roll" data-price="₦1,200" data-heat="1">Veggie</button></div>
+ <div class="step">Step 2 · Set the heat</div>
+ <div class="heats" id="heats"><button data-h="1">🌶<br>Small Pepper</button><button data-h="2">🌶🌶<br>Ata Dey</button><button data-h="3">🌶🌶🌶<br>Fire Dey</button></div>
+ <label><input type="checkbox" id="dip"> Add a pot of pepper dip (+₦300)</label>
+ <div class="sum"><span id="sumName">Suya Chicken Roll</span><b id="sumPrice">₦1,800</b></div>
+ <div class="row"><button class="btn red" id="bake">🔥 Bake &amp; box it</button><a class="btn wa" id="order" hidden target="_blank" rel="noopener" href="https://wa.me/234XXXXXXXXXX">Order on WhatsApp</a></div>
+</aside>
+<div class="banner-cta"><a class="btn" href="concept-1-pepper-kitchen.html#lunch-box">Order a Lunch Box</a><a class="btn chow" href="concept-1-pepper-kitchen.html#chin-chin">Shop Spicy Chin-Chin</a></div>
+</header>
+<section id="roll-bar" class="sec" data-zone="0"><div class="wrap">
+ <p class="eyebrow">The signature line</p><h2>Naija Stuffed Roll Bar</h2>
+ <p class="lede">One soft dough: lightly buttery, not sweet. Every roll is closed so you can eat it at your desk without cutlery. Turn the heat up or down when you order.</p>
+ <div class="grid"><article class="card roll hero-item" data-heat="2" data-id="suya">
+  <span class="badge">The hero roll</span><span class="pick">Picked for your heat</span>
+  <h3>Suya Chicken Roll</h3><p>Shredded chicken in suya spice with onions and a dusting of yaji</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,800</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Suya%20Chicken%20Roll%20%28NGN%201%2C800%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="beef">
+  <span class="pick">Picked for your heat</span>
+  <h3>Peppered Beef Roll</h3><p>Minced beef in ata rodo pepper sauce</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,800</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Peppered%20Beef%20Roll%20%28NGN%201%2C800%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="gizdodo">
+  <span class="pick">Picked for your heat</span>
+  <h3>Gizdodo Roll</h3><p>Peppered gizzard with fried plantain</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦2,000</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Gizdodo%20Roll%20%28NGN%202%2C000%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="3" data-id="asun">
+  <span class="pick">Picked for your heat</span>
+  <h3>Asun Roll</h3><p>Spicy smoked goat meat</p><div class="meta"><span class="heat">🌶🌶🌶 Fire Dey</span><b>₦2,500</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Asun%20Roll%20%28NGN%202%2C500%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="2" data-id="fish">
+  <span class="pick">Picked for your heat</span>
+  <h3>Spicy Fish Roll</h3><p>Mackerel (titus) in pepper sauce</p><div class="meta"><span class="heat">🌶🌶 Ata Dey</span><b>₦1,700</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Spicy%20Fish%20Roll%20%28NGN%201%2C700%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="1" data-id="egg">
+  <span class="pick">Picked for your heat</span>
+  <h3>Egg &amp; Sausage Breakfast Roll</h3><p>Scrambled egg, sausage, pepper and onion</p><div class="meta"><span class="heat">🌶 Small Pepper</span><b>₦1,500</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Egg%20%26%20Sausage%20Breakfast%20Roll%20%28NGN%201%2C500%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="1" data-id="veggie">
+  <span class="pick">Picked for your heat</span>
+  <h3>Veggie Roll</h3><p>Spiced plantain, sweetcorn and peppers</p><div class="meta"><span class="heat">🌶 Small Pepper</span><b>₦1,200</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Veggie%20Roll%20%28NGN%201%2C200%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article><article class="card roll" data-heat="0" data-id="party">
+  <span class="pick">Picked for your heat</span>
+  <h3>Mini Roll Party Pack (12)</h3><p>A mix of the fillings above</p><div class="meta"><span class="heat">Mixed</span><b>₦9,000</b></div>
+  <a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order%3A%20Mini%20Roll%20Party%20Pack%20%2812%29%20%28NGN%209%2C000%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Add to WhatsApp order</a>
+</article></div>
+ <p class="note">Add-on: a small pot of pepper dip, <b>₦300</b>.</p>
+</div></section>
+
+<section id="lunch-box" class="sec" data-zone="1"><div class="wrap">
+ <p class="eyebrow">Pre-order for the office</p><h2>Office Lunch Box</h2>
+ <div class="cutoff"><span class="clock">⏰ 10:00am</span> Orders and transfer payments close at 10:00am. Baking starts at 10:00, everything is packed by 12:00, deliveries run 12:30–1:30pm to one area per day.</div>
+ <div class="grid"><article class="card"><h3>Quick Box</h3><p>1 stuffed roll + 1 drink</p><div class="meta"><b>₦2,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Quick%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Classic Box</h3><p>2 stuffed rolls + 1 drink</p><div class="meta"><b>₦4,500</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Classic%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Spicy Treat Box</h3><p>1 stuffed roll + 1 spicy chin-chin snack pack + 1 drink</p><div class="meta"><b>₦3,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Spicy%20Treat%20Box%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article><article class="card"><h3>Team Box (5 people)</h3><p>5 Classic Boxes with mixed rolls</p><div class="meta"><b>₦21,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20to%20pre-order%20a%20Team%20Box%20%285%20people%29%20for%20tomorrow." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Pre-order</a></article></div>
+ <p class="note">Drinks: homemade zobo, Chapman, kunu or chilled water.</p>
+ <p class="note"><b>Delivery areas:</b> <span class="ph">[Placeholder: add today's delivery area, e.g. one area per weekday]</span></p>
+ <p class="note"><b>Office champions:</b> collect your office's orders and get a free box for every 10 boxes ordered. Friday Team Boxes for office treats and meetings.</p>
+</div></section>
+
+<section id="chin-chin" class="sec" data-zone="2"><div class="wrap">
+ <p class="eyebrow">Not too sweet. Just right spicy.</p><h2>Spicy Chin-Chin Shop</h2>
+ <p class="lede">Soft-crunchy, never rock hard. Seasoned in the dough and dusted again after frying, so you taste it in every bite.</p>
+ <ul class="flavours"><li><b>Classic Pepper</b> <span>Ata pepper with a pinch of salt.</span></li><li><b>Suya Spice</b> <span>Yaji seasoning.</span></li><li><b>Pepper &amp; Onion</b> <span>Savoury pepper and onion.</span></li><li><b>Sweet Heat</b> <span>Lightly sweet with chilli, for people who love regular chin-chin.</span></li></ul>
+ <div class="grid"><article class="card"><h3>Snack pack (50g)</h3><p>Lunch box add-on, impulse buys</p><div class="meta"><b>₦500</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Snack%20pack%20%2850g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Resealable pouch (200g)</h3><p>Everyday snacking</p><div class="meta"><b>₦1,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Resealable%20pouch%20%28200g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Jar or bottle (500g)</h3><p>Home and gifting</p><div class="meta"><b>₦3,800</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Jar%20or%20bottle%20%28500g%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Bucket (1kg / 2kg)</h3><p>Parties and offices</p><div class="meta"><b>₦7,000 / ₦13,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Bucket%20%281kg%20/%202kg%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article><article class="card"><h3>Gift set (3 small jars, 3 flavours)</h3><p>Festive and corporate gifts</p><div class="meta"><b>₦6,000</b></div><a class="btn small wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%20would%20like%20Spicy%20Chin-Chin%3A%20Gift%20set%20%283%20small%20jars%2C%203%20flavours%29" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Order</a></article></div>
+</div></section>
+
+<section id="spicy-drop" class="sec" data-zone="3"><div class="wrap">
+ <p class="eyebrow">Limited edition · pre-order only</p><h2>This Week's Spicy Drop</h2>
+ <div class="drop card"><span class="badge">Sample drop</span><h3>Peppered Snail Roll</h3>
+ <p>One new limited item every week, announced Monday on Instagram, TikTok and WhatsApp status. Only around 50 made. When they're gone, they're gone.</p>
+ <div class="meta"><span>Capped at ~50</span><b class="ph">Price announced Monday</b></div>
+ <a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20Please%20reserve%20me%20this%20week%27s%20Spicy%20Drop." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">Reserve this week's drop</a>
+ <p class="note">Coming up: Ofada Sauce Roll · Pepper Soup Chicken Roll · Jollof &amp; Chicken Roll · Spicy Chicken Puff-Puff · Shawarma-Spiced Roll · Chilli Chocolate Doughnut</p></div>
+</div></section>
+
+<section id="cakes-events" class="sec" data-zone="4"><div class="wrap">
+ <p class="eyebrow">For your owambe, office party or birthday</p><h2>Cakes &amp; Events</h2>
+ <div class="grid">
+  <article class="card"><h3>Celebration cakes</h3><p>Birthdays, weddings and events. Order with 3–5 days' notice.</p></article>
+  <article class="card"><h3>Doughnuts</h3><p>With a few twists, like a chilli-chocolate glaze.</p></article>
+  <article class="card"><h3>Puff-puff, Spicy Treat style</h3><p>Savoury filled (spicy chicken, peppered beef), dusted (pepper-salt, suya spice) or sweet filled (custard, coconut).</p></article>
+  <article class="card"><h3>Small chops trays</h3><p>Samosa, spring rolls, puff-puff, mini stuffed rolls and peppered gizzard, plus a few packs of spicy chin-chin.</p></article>
+ </div>
+ <form class="quote" onsubmit="return stQuote(this)">
+  <h3>Request a quote</h3>
+  <label>Name<input name="name" required></label>
+  <label>Event date<input name="date" type="date"></label>
+  <label>What do you need?<select name="what"><option>Celebration cake</option><option>Doughnuts</option><option>Puff-puff</option><option>Small chops tray</option><option>A mix</option></select></label>
+  <label>Number of guests<input name="guests" type="number" min="1"></label>
+  <label class="full">Details<textarea name="notes" rows="3" placeholder="Flavour, theme, heat level…"></textarea></label>
+  <button class="btn wa" type="submit">Send request on WhatsApp</button>
+  <small>Opens WhatsApp with your request filled in (number is a placeholder for now).</small>
+ </form>
+</div></section>
+
+<section id="about" class="sec" data-zone="5"><div class="wrap">
+ <p class="eyebrow">About Spicy Treat</p><h2>The bakery for people who'd rather have savoury and spicy</h2>
+ <p class="lede">Freshly baked, filling, a real kick of pepper, and priced for an everyday lunch. Every signature item has a peppery kick, and you choose how hot you want it.</p>
+ <div class="heat-scale">
+  <div class="lvl l1"><b>🌶</b><h3>Small Pepper</h3><p>Warm and friendly, for everyone</p></div>
+  <div class="lvl l2"><b>🌶🌶</b><h3>Ata Dey</h3><p>Proper Naija heat</p></div>
+  <div class="lvl l3"><b>🌶🌶🌶</b><h3>Fire Dey</h3><p>For serious pepper lovers</p></div>
+ </div>
+ <div class="contact card"><h3>Contact &amp; ordering</h3>
+  <p>Pre-order on WhatsApp or here on the website. Same-day delivery on Chowdeck.</p>
+  <p><a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21" target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">WhatsApp us</a> <a class="btn chow" href="concept-1-pepper-kitchen.html#chowdeck-link-placeholder" title="Placeholder: replace with the real Chowdeck store link">Chowdeck (placeholder link)</a></p>
+  <p class="note ph">Placeholders: WhatsApp number wa.me/234XXXXXXXXXX and the Chowdeck store link must be replaced before launch.</p>
+ </div>
+</div></section>
+<footer class="foot"><b>Spicy Treat</b> · Pastry with a kick · Lagos <span class="ph">· concept prototype · Logo: placeholder (no logo chosen yet)</span></footer>
+<div class="float-cta"><a class="btn wa" href="https://wa.me/234XXXXXXXXXX?text=Hi%20Spicy%20Treat%21%20I%27d%20like%20to%20order." target="_blank" rel="noopener" title="WhatsApp number is a placeholder (234XXXXXXXXXX)">💬 Order on WhatsApp</a><a class="btn chow" href="concept-1-pepper-kitchen.html#chowdeck-link-placeholder" title="Placeholder Chowdeck link">Chowdeck</a></div>
+<script type="module">
+import * as THREE from 'three';
+const canvas=document.getElementById('scene');
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(e){stFail();throw e;}
+window.__st3d=true;
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#2a1612');scene.fog=new THREE.Fog('#2a1612',12,26);
+const cam=new THREE.PerspectiveCamera(40,1,.1,60);
+const M=(c,o={})=>new THREE.MeshStandardMaterial({color:c,roughness:.7,...o});
+scene.add(new THREE.HemisphereLight('#ffe7c2','#3a1a10',.9));
+const sun=new THREE.DirectionalLight('#fff1d6',2.2);sun.position.set(4,8,5);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);
+Object.assign(sun.shadow.camera,{left:-8,right:8,top:8,bottom:-8});scene.add(sun);
+// kitchen: back wall tiles, counter
+const wallTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#8f1d16';g.fillRect(0,0,256,256);g.strokeStyle='#f3d9b0';g.lineWidth=4;for(let i=0;i<=256;i+=64){g.beginPath();g.moveTo(i,0);g.lineTo(i,256);g.stroke();g.beginPath();g.moveTo(0,i);g.lineTo(256,i);g.stroke();}const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(6,3);t.colorSpace=THREE.SRGBColorSpace;return t;})();
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(24,10),new THREE.MeshStandardMaterial({map:wallTex,roughness:.9}));wall.position.set(0,3,-4);wall.receiveShadow=true;scene.add(wall);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(30,20),M('#3b2219'));floor.rotation.x=-Math.PI/2;floor.position.y=-2;scene.add(floor);
+const counter=new THREE.Mesh(new THREE.BoxGeometry(14,.4,5),M('#c49a6c',{roughness:.55}));counter.position.set(0,-.2,0);counter.receiveShadow=true;scene.add(counter);
+const cab=new THREE.Mesh(new THREE.BoxGeometry(14,1.8,4.6),M('#1e1a18'));cab.position.set(0,-1.3,0);scene.add(cab);
+// oven
+const oven=new THREE.Group();const ob=new THREE.Mesh(new THREE.BoxGeometry(3,2.4,2),M('#2b2522',{metalness:.4,roughness:.4}));ob.castShadow=true;oven.add(ob);
+const win=new THREE.Mesh(new THREE.PlaneGeometry(2.2,1.2),new THREE.MeshStandardMaterial({color:'#ff7a1a',emissive:'#ff5a00',emissiveIntensity:1.2}));win.position.set(0,-.2,1.01);oven.add(win);
+for(let i=0;i<3;i++){const k=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,.12,16),M('#f2b63d',{metalness:.6}));k.rotation.x=Math.PI/2;k.position.set(-.7+i*.7,.85,1.05);oven.add(k);}
+oven.position.set(-4.6,1.2,-2.4);scene.add(oven);
+const ovenLight=new THREE.PointLight('#ff6a1a',6,6);ovenLight.position.set(-4.6,1,-1);scene.add(ovenLight);
+// pepper jars on shelf
+const shelf=new THREE.Mesh(new THREE.BoxGeometry(5,.15,.8),M('#a57b4f'));shelf.position.set(4,3,-3.5);scene.add(shelf);
+['#e0301e','#f2b63d','#7d0b12','#c49a6c'].forEach((c,i)=>{const j=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,.8,20),M(c,{roughness:.3}));j.position.set(2.4+i*1.1,3.5,-3.5);j.castShadow=true;scene.add(j);const l=new THREE.Mesh(new THREE.CylinderGeometry(.37,.37,.15,20),M('#1e1a18'));l.position.set(2.4+i*1.1,3.95,-3.5);scene.add(l);});
+// chillies on counter
+const chili=(c)=>{const g=new THREE.Group();const b=new THREE.Mesh(new THREE.CapsuleGeometry(.12,.55,6,12),M(c,{roughness:.25}));b.rotation.z=Math.PI/2.3;g.add(b);const s=new THREE.Mesh(new THREE.CylinderGeometry(.03,.05,.18,8),M('#2f7a2a'));s.position.set(.3,.15,0);s.rotation.z=-.6;g.add(s);g.traverse(o=>o.castShadow=true);return g;};
+[[-2.6,.1,1.6,'#e0301e'],[-2.1,.1,1.9,'#b3121b'],[-2.9,.1,2.1,'#f28c1a']].forEach(([x,y,z,c],i)=>{const k=chili(c);k.position.set(x,y,z);k.rotation.y=i*1.3;scene.add(k);});
+// board
+const board=new THREE.Mesh(new THREE.BoxGeometry(3.4,.12,2.2),M('#e2b980',{roughness:.6}));board.position.set(-1,.06,.6);board.receiveShadow=true;scene.add(board);
+// burner glow under board area
+const burner=new THREE.Mesh(new THREE.TorusGeometry(.8,.06,8,40),new THREE.MeshStandardMaterial({color:'#331',emissive:'#ff4400',emissiveIntensity:.6}));burner.rotation.x=-Math.PI/2;burner.position.set(-1,.14,.6);scene.add(burner);
+const flames=new THREE.Group();scene.add(flames);flames.position.set(-1,.14,.6);
+const flameMat=new THREE.MeshBasicMaterial({color:'#ff7a1a',transparent:true,opacity:.75,blending:THREE.AdditiveBlending,depthWrite:false});
+for(let i=0;i<14;i++){const f=new THREE.Mesh(new THREE.ConeGeometry(.08,.4,8),flameMat);const a=i/14*Math.PI*2;f.position.set(Math.cos(a)*.8,.2,Math.sin(a)*.8);f.userData.ph=Math.random()*6;flames.add(f);}
+// ROLL
+const FILL={0:'#8a4a22',1:'#6b2a1a',2:'#c0661a',3:'#4f2414',4:'#9a5a3a',5:'#f2c63a',6:'#e7b52f'};
+const roll=new THREE.Group();
+const doughMat=M('#e9a94a',{roughness:.45});
+const body=new THREE.Mesh(new THREE.CapsuleGeometry(.55,1.5,10,24),doughMat);body.rotation.z=Math.PI/2;body.castShadow=true;roll.add(body);
+for(let i=-1;i<=1;i++){const s=new THREE.Mesh(new THREE.TorusGeometry(.5,.035,6,30,Math.PI),M('#b8702a'));s.position.x=i*.5;s.rotation.y=Math.PI/2;s.rotation.z=0;s.position.y=.08;roll.add(s);}
+const fillMat=M(FILL[0],{roughness:.8});
+const fillEnds=[];[-1,1].forEach(sg=>{const f=new THREE.Mesh(new THREE.SphereGeometry(.42,20,14),fillMat);f.scale.set(.35,1,1);f.position.x=sg*1.18;roll.add(f);fillEnds.push(f);});
+// yaji dusting specks
+const speckGeo=new THREE.BufferGeometry();const sp=[];for(let i=0;i<220;i++){const a=Math.random()*Math.PI;const x=(Math.random()-.5)*1.9;sp.push(x,Math.sin(a)*.57,Math.cos(a)*.57);}speckGeo.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));
+const specks=new THREE.Points(speckGeo,new THREE.PointsMaterial({color:'#7a1a0c',size:.045}));roll.add(specks);
+const ROLLHOME=new THREE.Vector3(-1,.8,.6);roll.position.copy(ROLLHOME);scene.add(roll);
+// pepper particles
+const PN=600;const pg=new THREE.BufferGeometry();const pp=new Float32Array(PN*3),pv=new Float32Array(PN);for(let i=0;i<PN;i++){pp[i*3]=-1+(Math.random()-.5)*2.4;pp[i*3+1]=Math.random()*3;pp[i*3+2]=.6+(Math.random()-.5)*1.6;pv[i]=.4+Math.random();}
+pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
+const flake=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');const gr=g.createRadialGradient(32,32,2,32,32,30);gr.addColorStop(0,'#fff3c0');gr.addColorStop(.3,'#ff5a1a');gr.addColorStop(1,'rgba(180,18,27,0)');g.fillStyle=gr;g.fillRect(0,0,64,64);const t=new THREE.CanvasTexture(c);return t;})();
+const pmat=new THREE.PointsMaterial({size:.16,map:flake,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});
+const peppers=new THREE.Points(pg,pmat);scene.add(peppers);
+const heatLight=new THREE.PointLight('#ff3b1a',4,5);heatLight.position.set(-1,1.6,1.4);scene.add(heatLight);
+// KRAFT BOX
+const kraft=M('#c49a6c',{roughness:.85});const kraftIn=M('#a57b4f',{roughness:.9});
+const box=new THREE.Group();const W=2.6,D=1.5,H=.9,T=.05;
+const bt=new THREE.Mesh(new THREE.BoxGeometry(W,T,D),kraftIn);box.add(bt);
+[[0,H/2,D/2,W,H,T],[0,H/2,-D/2,W,H,T],[W/2,H/2,0,T,H,D],[-W/2,H/2,0,T,H,D]].forEach(([x,y,z,a,b,c])=>{const m=new THREE.Mesh(new THREE.BoxGeometry(a,b,c),kraft);m.position.set(x,y,z);m.castShadow=true;box.add(m);});
+const lidPivot=new THREE.Group();lidPivot.position.set(0,H,-D/2);box.add(lidPivot);
+const lidTex=(()=>{const c=document.createElement('canvas');c.width=512;c.height=300;const g=c.getContext('2d');g.fillStyle='#c49a6c';g.fillRect(0,0,512,300);for(let i=0;i<1400;i++){g.fillStyle=`rgba(90,55,25,${Math.random()*.15})`;g.fillRect(Math.random()*512,Math.random()*300,2,2);}g.fillStyle='#b3121b';g.font='800 64px "Baloo 2",sans-serif';g.textAlign='center';g.fillText('Spicy Treat',256,150);g.font='600 28px Poppins,sans-serif';g.fillStyle='#1e1a18';g.fillText('Pastry with a kick.',256,200);return new THREE.CanvasTexture(c);})();lidTex.colorSpace=THREE.SRGBColorSpace;
+const lid=new THREE.Mesh(new THREE.BoxGeometry(W+.04,T,D+.04),[kraft,kraft,new THREE.MeshStandardMaterial({map:lidTex,roughness:.85}),kraftIn,kraft,kraft]);lid.position.set(0,0,D/2);lid.castShadow=true;lidPivot.add(lid);
+let stickerMat=new THREE.MeshBasicMaterial({transparent:true});const sticker=new THREE.Mesh(new THREE.CircleGeometry(.32,32),stickerMat);sticker.rotation.x=-Math.PI/2;sticker.position.set(.95,T/2+.005,D/2+.35);sticker.visible=false;lid.add(sticker);
+function stickerTex(h){const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle=['#e59a1e','#e59a1e','#e0301e','#7d0b12'][h];g.beginPath();g.arc(128,128,124,0,7);g.fill();g.fillStyle='#fff';g.textAlign='center';g.font='bold 70px sans-serif';g.fillText('🌶'.repeat(h),128,130);g.font='800 34px "Baloo 2",sans-serif';g.fillText(['','Small Pepper','Ata Dey','Fire Dey'][h],128,190);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+lidPivot.rotation.x=-1.9;box.position.set(1.7,0,.4);box.rotation.y=-.25;scene.add(box);
+// state
+const st={roll:0,heat:2,phase:'idle',t:0,dip:false};
+const rollBtns=[...document.querySelectorAll('#rolls button')],heatBtns=[...document.querySelectorAll('#heats button')];
+const fmt=n=>'₦'+n.toLocaleString('en-NG');
+function sync(){rollBtns.forEach((b,i)=>b.classList.toggle('on',i===st.roll));heatBtns.forEach(b=>b.classList.toggle('on',+b.dataset.h===st.heat));
+ const b=rollBtns[st.roll];const base=+b.dataset.price.replace(/[^0-9]/g,'');document.getElementById('sumName').textContent=b.dataset.name.replace('&amp;','&');document.getElementById('sumPrice').textContent=fmt(base+(st.dip?300:0));
+ fillMat.color.set(FILL[st.roll]);document.body.className='heat-'+st.heat;
+ const txt=`Hi Spicy Treat! I baked my order in the Pepper Kitchen:\n${b.dataset.name.replace('&amp;','&')} - heat: ${['','Small Pepper','Ata Dey','Fire Dey'][st.heat]}${st.dip?'\n+ pepper dip (NGN 300)':''}\nTotal: NGN ${(base+(st.dip?300:0)).toLocaleString()}`;
+ document.getElementById('order').href='https://wa.me/234XXXXXXXXXX?text='+encodeURIComponent(txt);}
+const toast=m=>{const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1600);};
+rollBtns.forEach((b,i)=>b.onclick=()=>{reset();st.roll=i;st.heat=+b.dataset.heat||st.heat;sync();st.bounce=1;toast(b.dataset.name.replace('&amp;','&')+' on the board');});
+heatBtns.forEach(b=>b.onclick=()=>{reset();st.heat=+b.dataset.h;sync();toast(['','Small Pepper: warm and friendly','Ata Dey: proper Naija heat','Fire Dey: for serious pepper lovers 🔥'][st.heat]);});
+document.getElementById('dip').onchange=e=>{st.dip=e.target.checked;sync();};
+document.getElementById('bake').onclick=()=>{if(st.phase!=='idle')return;st.phase='bake';st.t=0;};
+function reset(){if(st.phase==='idle')return;st.phase='idle';roll.position.copy(ROLLHOME);roll.scale.setScalar(1);roll.visible=true;lidPivot.rotation.x=-1.9;sticker.visible=false;document.getElementById('order').hidden=true;document.getElementById('bake').textContent='🔥 Bake & box it';}
+// drag to look
+let tx=0,ty=0,drag=false,lx=0;canvas.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;});addEventListener('pointerup',()=>drag=false);
+addEventListener('pointermove',e=>{if(drag){tx=Math.max(-1,Math.min(1,tx+(e.clientX-lx)/300));lx=e.clientX;}ty=(e.clientY/innerHeight-.5);});
+// raycast click roll = spin
+const ray=new THREE.Raycaster(),mv=new THREE.Vector2();canvas.addEventListener('click',e=>{const r=canvas.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,cam);if(ray.intersectObject(roll,true).length){st.spin=1;toast('Fresh out the oven 😋');}});
+function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();cam.fov=w<820?52:40;cam.updateProjectionMatrix();}
+addEventListener('resize',resize);resize();
+let visible=true;new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(canvas);
+const clock=new THREE.Clock();const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+function tick(){requestAnimationFrame(tick);if(!visible)return;const dt=Math.min(clock.getDelta(),.05),T=clock.elapsedTime;
+ const heat=st.heat;const k=[0,.35,.7,1.15][heat];
+ // particles
+ const pa=pg.attributes.position.array;const active=Math.floor(PN*[0,.25,.55,1][heat]);
+ for(let i=0;i<PN;i++){if(i<active){pa[i*3+1]+=dt*pv[i]*(.6+k*1.5);pa[i*3]+=Math.sin(T*2+i)*dt*.2;if(pa[i*3+1]>3.6){pa[i*3+1]=.3;pa[i*3]=-1+(Math.random()-.5)*2.4;}}else pa[i*3+1]=-50;}
+ pg.attributes.position.needsUpdate=true;pmat.size=.12+k*.08;
+ heatLight.intensity=2+k*9+Math.sin(T*9)*k*1.5;heatLight.color.setHSL(.03+(.08-k*.05),1,.55);
+ flames.children.forEach(f=>{const s=(.4+k*1.3)*(0.8+Math.sin(T*14+f.userData.ph)*.25);f.scale.set(1,s,1);f.position.y=.2*s;});
+ flameMat.color.setHSL(.09-k*.05,1,.55);burner.material.emissiveIntensity=.3+k*1.2;
+ ovenLight.intensity=5+Math.sin(T*3)*1.2;
+ // roll idle
+ if(st.phase==='idle'){roll.position.y=ROLLHOME.y+Math.sin(T*2)*.06+(st.bounce?Math.sin(st.bounce*Math.PI)*.6:0);roll.rotation.y=Math.sin(T*.6)*.4;roll.rotation.x=(st.spin?(1-st.spin)*Math.PI*2:0);}
+ if(st.bounce){st.bounce=Math.max(0,st.bounce-dt*2.2);} if(st.spin){st.spin=Math.max(0,st.spin-dt*1.3);}
+ // bake sequence
+ if(st.phase==='bake'){st.t+=dt;const t=st.t;doughMat.color.setHSL(.095,.72,.56-Math.min(t,1)*.1);
+   if(t<1.1){roll.rotation.y+=dt*6;roll.position.y=ROLLHOME.y+Math.sin(t/1.1*Math.PI)*.4;}
+   else if(t<2.3){const u=ease((t-1.1)/1.2);const tgt=new THREE.Vector3(box.position.x,.47,box.position.z);roll.position.lerpVectors(ROLLHOME,tgt,u);roll.position.y+=Math.sin(u*Math.PI)*1.6;roll.rotation.y=-.25*u;roll.scale.setScalar(1-u*.32);}
+   else if(t<3.2){const u=ease((t-2.3)/.9);lidPivot.rotation.x=-1.9+1.9*u;}
+   else{if(!sticker.visible){stickerMat.map=stickerTex(heat);stickerMat.needsUpdate=true;sticker.visible=true;sticker.scale.setScalar(.01);document.getElementById('order').hidden=false;document.getElementById('bake').textContent='↺ Bake another';toast('Boxed with your '+['','Small Pepper','Ata Dey','Fire Dey'][heat]+' sticker! 📦');st.phase='done';st.t=0;}}
+ }
+ if(st.phase==='done'){st.t+=dt;sticker.scale.setScalar(Math.min(1,st.t*3)*(1+Math.sin(Math.min(st.t*3,1)*Math.PI)*.3));box.position.y=Math.abs(Math.sin(T*3))*.04;}
+ // camera
+ const ox=innerWidth>820?1.9:.35;const cx=tx*2.2,cy=-ty*.6;cam.position.lerp(new THREE.Vector3(ox+cx,4.1+cy,8.4),.06);cam.lookAt(ox,.7,.2);
+ renderer.render(scene,cam);}
+document.getElementById('bake').addEventListener('click',()=>{if(st.phase==='done'){reset();}},true);
+window.__testHook=()=>document.getElementById('bake').click();
+sync();tick();
+</script><a data-deed-badge href="https://deed.page/clean?ref=badge" target="_blank" rel="noopener" aria-label="Published with deed.page" style="all:initial;position:fixed;right:10px;bottom:10px;z-index:2147483647;box-sizing:border-box;display:inline-block;padding:4px 8px;border-radius:6px;background:rgba(22,20,15,.78);color:#f6f3ec;font:500 11px/1.3 ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.01em;text-decoration:none;cursor:pointer;opacity:.9">Published with deed.page</a></body></html>
